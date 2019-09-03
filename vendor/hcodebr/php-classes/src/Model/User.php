@@ -83,7 +83,7 @@ class User extends Model {
 
 	}
 
-     public function save()
+     		public function save()
      {
      	
      	$sql = new Sql();
@@ -98,7 +98,7 @@ class User extends Model {
      		":inadmin"=>$this->getinadmin()
      	));
 
-     	$this->setData($results[0]);
+     	$this->set($results[0]);
 
      }
      	    public function get($iduser)
