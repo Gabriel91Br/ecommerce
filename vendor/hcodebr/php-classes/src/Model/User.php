@@ -123,7 +123,7 @@ class User extends Model {
 
      	$results = $sql-> select("CALL sp_usersupdate_save(:iduser, :desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", array(
 
-     		":inadmin"=>$this->getiduser(),	
+     		":iduser"=>$this->getiduser(),
      		":desperson"=>$this->getdesperson(),
      		":deslogin"=>$this->getdeslogin(),
      		":despassword"=>$this->getdespassword(),
@@ -141,15 +141,13 @@ class User extends Model {
 
      			$sql = new Sql();
 
-     			$sql -> query("CALL sp_users_delete(:idusers)", array(
+     			$sql->query("CALL sp_users_delete(:iduser)", array(
 
      				":iduser"=>$this->getiduser()
 
      			));
 
      		}
-
-
 }
 
 

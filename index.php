@@ -87,7 +87,7 @@ $app->get("/admin/users/:iduser/delete", function($iduser){
 
 	$user = new User();
 
-	$user->getData((int)$iduser);
+	$user->get((int)$iduser);
 
 	$user-> delete();
 
@@ -145,7 +145,7 @@ $app->post("/admin/users/:iduser", function($iduser) {
 
 	$_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
 
-	$user->set((int)$iduser);
+	$user->get((int)$iduser);
 
 	$user->setData($_POST);
 
